@@ -8,12 +8,6 @@
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
     </modules>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.5.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <groupId>com.daelly</groupId>
     <artifactId>dubbo-sample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -21,15 +15,20 @@
     <description>Demo project for Spring Boot Dubbo</description>
 
     <properties>
-        <java.version>1.8</java.version>
-        <dubbo.version>2.7.1</dubbo.version>
+        <java.version>8</java.version>
+        <dubbo.version>3.2.7</dubbo.version>
         <logback.version>1.2.3</logback.version>
+        <spring.version>2.5.7</spring.version>
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <type>pom</type>
+            <scope>import</scope>
+            <version>${spring.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-starter -->
@@ -104,6 +103,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -113,6 +113,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.version}</version>
             </plugin>
         </plugins>
     </build>
